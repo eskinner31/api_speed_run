@@ -8,6 +8,8 @@ passed along and appended to the created customer. I would likely refactor the c
 
 
 # Notes on own work,
+- This is my first attempt utilizing Class Syntax with Async/Await for Express. It is definitely syntactic sugar but 
+the experience is very different than Java/Kotlin.
 - Would choose Jasmine - Testing Suite, with Sinon for Mocking
 - many of the classes seen in this project should technically inherit and extend a 
 base parent class. Did not do that here as I was rapidly prototyping this code exercise
