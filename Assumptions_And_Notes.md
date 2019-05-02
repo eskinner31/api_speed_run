@@ -2,19 +2,13 @@
 - Assuming `INT ID` is `_id` on the json data since there is no explicit field matching that;
 - There are several ways to sort and index customers, my guess is that recent customers are typically
 going to be the most worked with and therefore the most relevant to prioritize in a large list.
-
-
-
-
-# Questions
-- When adding a new customer on the agent customer list view page,
-should details about that agent be added to customer creation?
-- Is customer creation only available as an agent.
+- Assuming that when creating a customer from the Agent Customer List View Page, the current `agent_id` should be 
+passed along and appended to the created customer. I would likely refactor the current implementation and have the 
+`post /customer` route to be able to accept a second argument with the `agent_id`
 
 
 # Notes on own work,
-- Would choose Jasmine - Testing Suite, with Sinon for Mocking and 
-assertions
+- Would choose Jasmine - Testing Suite, with Sinon for Mocking
 - many of the classes seen in this project should technically inherit and extend a 
 base parent class. Did not do that here as I was rapidly prototyping this code exercise
 - Related to project structure and selection of architecture
@@ -34,3 +28,12 @@ scope of this project.
  a `List` api call would function the same on mongo as it would on postgres. Ideally it would be shaped after the repository pattern
  found in the spring framework, that is not seen here.
 ```
+
+- In a later iteration of this project I would have worked to implement both modules that leveraged dependency injection, and would have
+tried to implement a repository pattern to help decouple the application.
+
+- Clearly Input Validation on the API layer needs to be added
+- Better Error Handling needs to be implemented, and more safety checks, as JS is messy.
+
+- I would have preferred to return specific links in a later iteration to handle necessary operations from specific views (HATEOAS)
+- Apply a binary search against the data set after the data has been sorted. 
